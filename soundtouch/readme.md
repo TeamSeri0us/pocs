@@ -11,7 +11,7 @@ SoundTouch is an open-source audio processing library for changing the Tempo, Pi
 this bug is reported by fish@360TeamSeri0us, 
 please send email to teamSeri0us360@gmail.com if you have some quetion.
 
-## details
+## Details
 
 1. there exists a  problem while an exception caught by the program  in function WavInFile::WavInFile(const char *fileName) in WavFile.cpp.
 
