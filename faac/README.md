@@ -11,7 +11,10 @@ this bug is reported by fish@360TeamSeri0us, please send email to teamSeri0us360
 
 ## Details
 A divide by zero error can be found  in pcmfile_t *wav_open_read(const char *name, int rawinput)
- in input.c, this could result in denial of service.
+ in input.c, this could result in denial of service.   
+ 
+`sndf->samples = riffsub.len / (sndf->samplebytes * sndf->channels);`
+
  
  
 ```c
