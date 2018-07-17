@@ -44,7 +44,7 @@
 
 # Description
 libgig is a C++ library for loading, modifying existing and creating new Gigasampler (.gig) files and DLS (Downloadable Sounds) Level 1/2 files, KORG sample based instruments (.KSF and .KMP files), SoundFont v2 (.sf2) files and AKAI sampler data. The source code package includes a couple of command line tools based on the library. The library and tools are released in source code format under the GNU General Public License, except the AKAI classes which are released under the GNU Lesser General Public License.
-
+link：http://www.linuxsampler.org/libgig/
 # version
 libgig 4.1.0
 
