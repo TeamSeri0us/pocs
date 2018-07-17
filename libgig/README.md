@@ -233,7 +233,7 @@ gig2stereo @@
 ## gdb info
 ```
 backtrace:
-[0m[31m[0m#0  0x00007ffff7b9603b in gig::Region::UpdateChunks (this=0x55555577fda0, pProgress=0x7fffffffcea0) at gig.cpp:3310
+#0  0x00007ffff7b9603b in gig::Region::UpdateChunks (this=0x55555577fda0, pProgress=0x7fffffffcea0) at gig.cpp:3310
 #1  0x00007ffff7b6950b in DLS::Instrument::UpdateChunks (this=this@entry=0x55555577e940, pProgress=pProgress@entry=0x7fffffffcf80) at DLS.cpp:1336
 #2  0x00007ffff7b96655 in gig::Instrument::UpdateChunks (this=0x55555577e940, pProgress=0x7fffffffcf80) at gig.cpp:4801
 #3  0x00007ffff7b69af1 in DLS::File::UpdateChunks (this=this@entry=0x7fffffffd4f0, pProgress=pProgress@entry=0x7fffffffd130) at DLS.cpp:1734
@@ -243,8 +243,8 @@ backtrace:
 #7  0x000055555555712c in main (argc=argc@entry=2, argv=argv@entry=0x7fffffffd888) at gig2stereo.cpp:664
 #8  0x00007ffff71c2b97 in __libc_start_main (main=0x555555556a10 <main(int, char**)>, argc=2, argv=0x7fffffffd888, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffd878) at ../csu/libc-start.c:310
 #9  0x000055555555794a in _start ()
-[31m[1msrc info:
-[0m[31m[0m3305	        // first update base class's chunks
+src info:
+3305	        // first update base class's chunks
 3306	        DLS::Region::UpdateChunks(pProgress);
 3307	
 3308	        // update dimension region's chunks
@@ -254,8 +254,8 @@ backtrace:
 3312	
 3313	        File* pFile = (File*) GetParent()->GetParent();
 3314	        bool version3 = pFile->pVersion && pFile->pVersion->major == 3;
-[31m[1mregister info:
-[0m[31m[0mrax            0x0	0
+register info:
+rax            0x0	0
 rbx            0x55555577fda0	93824994508192
 rcx            0x5	5
 rdx            0x1	1
@@ -279,7 +279,7 @@ ds             0x0	0
 es             0x0	0
 fs             0x0	0
 gs             0x0	0
-[31m[1m
+
 ```
 ## asan report
 ```
@@ -752,10 +752,9 @@ SUMMARY: AddressSanitizer: SEGV /home/fuzzing/libgig-4.1.0/src/./helper.h:125:14
 ```
 gig2stero vuln/store16_out-of-bounds-write.gig
 ```
-## gdb info
-```
 
-```
+
+
 ## asan report
 ```
 Converting file 1/1: stereo-crashes/22.gig ... AddressSanitizer:DEADLYSIGNAL
