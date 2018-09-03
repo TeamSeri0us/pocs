@@ -161,12 +161,12 @@ gdb-peda$ bt
 4. 
 
 ```
-root@50a1db6f0145:/work# gdb -q --args ./soundstretch POC-00 /dev/null -tempo=-50
+root@50a1db6f0145:/work# gdb -q --args ./soundstretch POC-4 /dev/null -tempo=-50
 context = 'none'
 clearscr = 'off'
 Reading symbols from soundstretch...done.
 gdb-peda$ r
-Starting program: soundstretch POC-00 /dev/null -tempo=-50
+Starting program: soundstretch POC-4 /dev/null -tempo=-50
 
    SoundStretch v2.1pre -  Copyright (c) Olli Parviainen
 =========================================================
