@@ -20,7 +20,8 @@ pocs is in vuln-1008
 ### target
 
 ./rifftree --first-chunk-id RIFF --flat vuln-1008/heap-buffer-overflow_RIFF.cpp:1536:32
-An issue was discovered in libgig 4.1.0. There is an heap-buffer-overflow in the  RIFF::List::GetListTypeString[abi:cxx11]() const at src/RIFF.cpp:1536:32.
+
+An issue was discovered in libgig 4.1.0. There is a heap-buffer-overflow in the  RIFF::List::GetListTypeString[abi:cxx11]() const at src/RIFF.cpp:1536:32.
 
 ### asan report
 
@@ -84,11 +85,12 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 ### target
 
 ./dlsdump vuln-1008/out-of-bounds-read_DLS.cpp:1515:14
+
 An issue was discovered in libgig 4.1.0. There is an out-of-bounds read in the function DLS::File::GetFirstSample() at src/DLS.cpp:1515:14.
 
 ### asan report
 
-```
+```txt
 File Name: "GAO-SHENG   "
 ALL Available Samples (as there might be more than referenced by Instruments):
 
@@ -131,8 +133,10 @@ SUMMARY: AddressSanitizer: SEGV /home/pwd/fuzz/from_exploit/libgig/libgig-4.1.0/
 ## operator-new-failed_DLS.cpp:570:51
 
 ### target
-./dlsdump vuln-1008/operator-new-failed_DLS.cpp\:570\:51 
-An issue was discovered in libgig 4.1.0. There is operator new[] failed (due to a big heap request) in DLS::Sampler::Sampler(RIFF::List*) at src/DLS.cpp:570:51.
+
+./dlsdump vuln-1008/operator-new-failed_DLS.cpp\:570\:51
+
+An issue was discovered in libgig 4.1.0. There is an operator new[] failed (due to a big heap request) in DLS::Sampler::Sampler(RIFF::List*) at src/DLS.cpp:570:51.
 
 ### source code
 
@@ -159,7 +163,8 @@ An issue was discovered in libgig 4.1.0. There is operator new[] failed (due to 
 ### target 
 
 ./dlsdump vuln-1008/heap-buffer-overflow_DLS.cpp:1052:33
-An issue was discovered in libgig 4.1.0. There is an heap-buffer-overflow in DLS::Region::GetSample() at src/DLS.cpp:1052:33.
+
+An issue was discovered in libgig 4.1.0. There is a heap-buffer-overflow in DLS::Region::GetSample() at src/DLS.cpp:1052:33.
 
 ### asan report 
 
@@ -239,7 +244,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 ### target
 
 ./dlsdump vuln-1008/operator-new-failed_DLS.cpp:570:51
-An issue was discovered in libgig 4.1.0. There is operator new[] failed (due to a big heap request) in DLS::File::File at DLS.cpp:1462.
+An issue was discovered in libgig 4.1.0. There is an operator new[] failed (due to a big heap request) in DLS::File::File at DLS.cpp:1462.
 
 ### source code
 
@@ -266,7 +271,7 @@ An issue was discovered in libgig 4.1.0. There is operator new[] failed (due to 
 ### target
 
 ./dlsdump vuln-1008/FPE-on-unknown-address_DLS.cpp:743:92
-An issue discovered in libgig 4.1.0. There is FPE on unknown address in DLS::Sample::Sample at DLS.cpp:743:92.
+An issue discovered in libgig 4.1.0. There is a FPE on unknown address in DLS::Sample::Sample at DLS.cpp:743:92.
 
 ### asan report
 
