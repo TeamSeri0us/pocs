@@ -9,8 +9,9 @@ libgig 4.1.0
 # others
 
 ## @_@
-this bug is reported by pwd@360TeamSeri0us, 
-please send email to  teamSeri0us360@gmail.com if you have some quetion.
+this bug is reported by pwd@360TeamSeri0us,
+please send email to  teamSeri0us360@gmail.com if you have any question.
+pocs is in vuln-1008
 
 # Detial
 
