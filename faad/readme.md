@@ -4,7 +4,7 @@ FAAD2 is a HE, LC, MAIN and LTP profile, MPEG2 and MPEG-4 AAC decoder.
 
 ## Version
 
-[2.8.1](https://github.com/knik0/faad2/archive/2_8_1.tar.gz)
+[2.8.8](https://sourceforge.net/projects/faac/files/faad2-src/faad2-2.8.0/)
 
 ## Others
 
