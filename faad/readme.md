@@ -4,7 +4,7 @@ FAAD2 is a HE, LC, MAIN and LTP profile, MPEG2 and MPEG-4 AAC decoder.
 
 ## Version
 
-[2.8.1](https://github.com/knik0/faad2/archive/2_8_1.tar.gz)
+[2.8.8](https://sourceforge.net/projects/faac/files/faad2-src/faad2-2.8.0/)
 
 ## Others
 
@@ -16,7 +16,7 @@ please send email to teamSeri0us360@gmail.com if you have some quetion.
 1. There was a buffer-overflow problem in function parse() in frontend/mp4read.c:746.
 
 ```	
-fish@ubuntu: ./afl/afl/bin/faad global-buffer-overflow
+fish@ubuntu: ./afl/afl/bin/faad global-buffer-overflow-1
  *********** Ahead Software MPEG-4 AAC Decoder V2.8.8 ******************
 
  Build: Nov 11 2018
@@ -82,7 +82,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 
 2. There was a heap-buffer-overflow bug in function excluded_channels() in libfaad/syntax.c:2297.
 
-fish@ubuntu:~ ./afl/afl/bin/faad  -o outfile.wav  heap-buffer-overflow
+fish@ubuntu:~ ./afl/afl/bin/faad  -o outfile.wav  heap-buffer-overflow-2
  *********** Ahead Software MPEG-4 AAC Decoder V2.8.8 ******************
 
  Build: Nov 11 2018
@@ -245,7 +245,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 
 4. There is an out-of-bound read bug in ifilter_bank() in libfaad/filtbank.c:307.
 
-fish@ubuntu:./afl/afl/bin/faad  -o outfile.wav  02POC 
+fish@ubuntu:./afl/afl/bin/faad  -o outfile.wav  out-of-bound-read-4
  *********** Ahead Software MPEG-4 AAC Decoder V2.8.8 ******************
 
  Build: Nov 11 2018
