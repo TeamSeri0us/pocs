@@ -14,7 +14,7 @@ this bug is reported by fish@360TeamSeri0us, please send email to teamSeri0us360
 
 ## Details
 
-`ixel2png infinite_loop_poc1`
+`./sixel2png infinite_loop_poc1`
 
 ```
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────[ source:../../src/fromsixel.c+561 ]────
