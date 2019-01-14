@@ -91,7 +91,7 @@ gef➤  bt
 
 2. There is a null-pointer-dereference problem in function rec_fex_size() in file src/rec-fex.c.
 
-fish@ubuntu:~/Desktop/dumb/archive/recutils-1.8$ ./debug/bin/rec2csv data/crashes-2019-01-11-23-38/rec2csv000\:id\:000008*
+fish@ubuntu:~/Desktop/dumb/archive/recutils-1.8$ ./debug/bin/rec2csv data/null-pointer-dereference-poc-2
 Segmentation fault (core dumped)
 
 ### asan report 
@@ -122,7 +122,7 @@ SUMMARY: AddressSanitizer: SEGV /home/fish/Desktop/dumb/archive/recutils-1.8/src
 ### gdb debug info
 
 ```
-fish@ubuntu:~/Desktop/dumb/archive/recutils-1.8$ gdb -q --args ./debug/bin/rec2csv data/crashes-2019-01-11-23-38/rec2csv000\:id\:000008*
+fish@ubuntu:~/Desktop/dumb/archive/recutils-1.8$ gdb -q --args ./debug/bin/rec2csv data/null-pointer-dereference-poc-2
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────[ source:rec-fex.c+257 ]────
     252	 }
@@ -143,7 +143,7 @@ fish@ubuntu:~/Desktop/dumb/archive/recutils-1.8$ gdb -q --args ./debug/bin/rec2c
 [#1] 0x7ffff7b7a5fb → Name: rec_rset_update_field_props(rset=0x55555579ade0)
 [#2] 0x7ffff7b78d83 → Name: rec_rset_set_descriptor(rset=0x55555579ade0, record=0x55555579cb90)
 [#3] 0x7ffff7b7ebce → Name: rec_parse_rset(parser=0x55555579ad30, rset=0x7fffffffdb80)
-[#4] 0x5555555586cf → Name: recutl_parse_db_from_file(in=0x555555798330, file_name=0x7fffffffe15d "data/crashes-2019-01-11-23-38/rec2csv000:id:000008,sig:11,src:000001,op:flip1,pos:1121", db=0x55555577bc30)
+[#4] 0x5555555586cf → Name: recutl_parse_db_from_file(in=0x555555798330, file_name=0x7fffffffe15d "data/null-pointer-dereference-poc-2", db=0x55555577bc30)
 [#5] 0x5555555587fc → Name: recutl_build_db(argc=0x2, argv=0x7fffffffdd68)
 [#6] 0x55555555996d → Name: main(argc=0x2, argv=0x7fffffffdd68)
 ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -154,7 +154,7 @@ gef➤  bt
 #1  0x00007ffff7b7a5fb in rec_rset_update_field_props (rset=0x55555579ade0) at rec-rset.c:1243
 #2  0x00007ffff7b78d83 in rec_rset_set_descriptor (rset=0x55555579ade0, record=0x55555579cb90) at rec-rset.c:354
 #3  0x00007ffff7b7ebce in rec_parse_rset (parser=0x55555579ad30, rset=0x7fffffffdb80) at rec-parser.c:578
-#4  0x00005555555586cf in recutl_parse_db_from_file (in=0x555555798330, file_name=0x7fffffffe15d "data/crashes-2019-01-11-23-38/rec2csv000:id:000008,sig:11,src:000001,op:flip1,pos:1121", db=0x55555577bc30) at recutl.c:246
+#4  0x00005555555586cf in recutl_parse_db_from_file (in=0x555555798330, file_name=0x7fffffffe15d "data/null-pointer-dereference-poc-2", db=0x55555577bc30) at recutl.c:246
 #5  0x00005555555587fc in recutl_build_db (argc=0x2, argv=0x7fffffffdd68) at recutl.c:332
 #6  0x000055555555996d in main (argc=0x2, argv=0x7fffffffdd68) at rec2csv.c:342
 gef➤  p *fex
@@ -324,6 +324,8 @@ SUMMARY: AddressSanitizer: 3414 byte(s) leaked in 71 allocation(s).
 
 4. There is a null-pointer-dereference problem in function rec_field_set_name() in file src/rec-field.c.
 
+fish@ubuntu:~/Desktop/dumb/archive/recutils-1.8$ ./debug/bin/rec2csv data/null-pointer-dereference-poc-4
+Segmentation fault (core dumped)
 
 ### asan report 
 
