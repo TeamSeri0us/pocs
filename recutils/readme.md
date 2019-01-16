@@ -324,7 +324,7 @@ SUMMARY: AddressSanitizer: 3414 byte(s) leaked in 71 allocation(s).
 
 4. There is a null-pointer-dereference problem in function rec_field_set_name() in file src/rec-field.c.
 
-fish@ubuntu:~/Desktop/dumb/archive/recutils-1.8$ ./debug/bin/rec2csv data/null-pointer-dereference-poc-4
+fish@ubuntu:~/Desktop/dumb/archive/recutils-1.8$ ./debug/bin/csv2rec data/null-pointer-dereference-poc-4
 Segmentation fault (core dumped)
 
 ### asan report 
