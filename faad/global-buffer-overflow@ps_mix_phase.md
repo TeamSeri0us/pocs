@@ -42,6 +42,11 @@ In file: /home/pwd/fuzz/fuzz-faad2/faad2/libfaad/ps_dec.c
 // $8 = -2
 
 ```
+
+## patch
+
+  chech the index of sf_iid is in [0, 14]
+
 ## asan report
 
 ```txt
