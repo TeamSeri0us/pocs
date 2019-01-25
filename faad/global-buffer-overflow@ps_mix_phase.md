@@ -15,8 +15,9 @@ please send email to teamSeri0us360@gmail.com if you have some quetion.
 
     ./faad global-buffer-overflow@ps_mix_phase
 
-
 ## src
+
+  underflow in ps_dec.c
 
 ```c
 In file: /home/pwd/fuzz/fuzz-faad2/faad2/libfaad/ps_dec.c
@@ -31,6 +32,14 @@ In file: /home/pwd/fuzz/fuzz-faad2/faad2/libfaad/ps_dec.c
    1515                 /* calculate alpha and beta using the ICC parameters */
    1516                 cosa = cos_alphas[ps->icc_index[env][bk]];
    1517                 sina = sin_alphas[ps->icc_index[env][bk]];
+// p no_iid_steps
+// $5 = -9 '\367'
+// pwndbg> p sf_iid[no_iid_steps + ps->iid_index[env][bk]]
+// $6 = 0.0031573684
+// pwndbg> p no_iid_steps 
+// $7 = 7 '\a'
+// pwndbg> p no_iid_steps + ps->iid_index[env][bk]
+// $8 = -2
 
 ```
 ## asan report
