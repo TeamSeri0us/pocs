@@ -1,0 +1,193 @@
+## Description
+
+```
+This is the LibOFX library. It is a parser and an API designed to allow applications to support the OFX banking standard (mostly used for bank statement download). To my knowledge, it is the first working OpenSource implementation on the client side.
+
+```
+
+## Version
+
+[0.9.14](https://sourceforge.net/projects/libofx/files/libofx/libofx-0.9.14.tar.gz/download)
+
+
+## Others
+
+```
+This bug is reported by fish@360TeamSeri0us, 
+please send email to  teamSeri0us360@gmail.com if you have any question.
+```
+
+## Details
+
+```
+fish@ubuntu:~/Desktop/dumb/tools/libofx-0.9.14$ ./fast/fast/bin/ofxdump null-poniter-dereference-poc-1 
+LibOFX INFO: libofx_proc_file(): File format not specified, autodetecting...
+LibOFX INFO: libofx_proc_file(): Detected file format: OFX (Open Financial eXchange (OFX or QFX))
+LibOFX INFO: sanitize_proprietary_tags() removed: <!-- Oc�. 29, m -->
+LibOFX INFO: sanitize_proprietary_tags() removed: <!-: Oct. 1, 1999 -->
+LibOFX INFO: sanitize_proprietary_tags() removed: <!-Oct. 28, 1999 -->
+LibOFX INFO: sanitize_proprietary_tags() removed: <!--ct. 4, 1999 -->
+LibOFX INFO: sanitize_proprietary_tags() removed: <!-- $200.00 -->
+LibOFX INFO: sanitize_proprietary_tags() removed: <! Oct. 20, 1999 -->
+LibOFX INFO: sanitize_proprietary_tags() removed: <!-- $300.00 -->
+LibOFX INFO: sanitize_proprietary_tags() removed: <!-- ement trans.
+LibOFX INFO: sanitize_proprietary_tags() removed: <amount: $200.29 -->
+LibOFX INFO: sanitize_proprietary_tags() removed: <!-- Ba: $200.29 -->
+LibOFX STATUS: find_dtd():DTD found: /home/fish/Desktop/dumb/tools/libofx-0.9.14/fast/fast/share/libofx/dtd/opensp.dcl
+LibOFX STATUS: find_dtd():DTD found: /home/fish/Desktop/dumb/tools/libofx-0.9.14/fast/fast/share/libofx/dtd/ofx160.dtd
+LibOFX INFO: Created OfxDummyContainer to hold unsupported aggregate SIGNONMSGSRSV1
+(Above message occurred on Line 1, Column 17)
+LibOFX INFO: Created OfxDummyContainer to hold unsupported aggregate SONRS
+(Above message occurred on Line 1, Column 33)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:3:1:E: non SGML character number 5
+
+(Above message occurred on Line 3, Column 2)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:3:1:E: start tag for "SEVERITY" omitted, but its declaration does not permit this
+
+(Above message occurred on Line 3, Column 2)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:3:13:E: document type does not allow element "SEVERITY" here
+
+(Above message occurred on Line 3, Column 14)
+LibOFX ERROR: startElement: incoming_data should be empty! You are probably using OpenSP <= 1.3.4.  The following data was lost:   
+(Above message occurred on Line 3, Column 5)
+LibOFX ERROR: Tried to close a SEVERITY but a STATUS is currently open.
+(Above message occurred on Line 3, Column 33)
+LibOFX ERROR: End tag for non data element STATUS, incoming data should be empty but contains:     DATA HAS BEEN LOST SOMEWHERE!
+(Above message occurred on Line 3, Column 33)
+ofx_proc_status():
+    Ofx entity this status is relevant to: SONRS 
+    Severity: INFO
+    Code: 0, name: Success
+    Description: The server successfully processed the request.
+
+LibOFX ERROR: startElement: incoming_data should be empty! You are probably using OpenSP <= 1.3.4.  The following data was lost:    
+(Above message occurred on Line 3, Column 45)
+LibOFX INFO: Created OfxDummyContainer to hold unsupported aggregate FI
+(Above message occurred on Line 6, Column 37)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:9:1:E: non SGML character number 0
+
+(Above message occurred on Line 9, Column 2)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:9:1:E: character data is not allowed here
+
+(Above message occurred on Line 9, Column 2)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:9:2:E: non SGML character number 127
+
+(Above message occurred on Line 9, Column 3)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:10:10:E: end tag for "FI" omitted, but its declaration does not permit this
+/tmp/libofxtmpQLPkEH:6:36: start tag was here
+
+(Above message occurred on Line 10, Column 11)
+    DATA HAS BEEN LOST SOMEWHERE!a element FI, incoming data should be empty but contains: /FI>
+(Above message occurred on Line 10, Column 4)
+    DATA HAS BEEN LOST SOMEWHERE!a element SONRS, incoming data should be empty but contains: /FI>
+(Above message occurred on Line 10, Column 4)
+    DATA HAS BEEN LOST SOMEWHERE!a element SIGNONMSGSRSV1, incoming data should be empty but contains: /FI>
+(Above message occurred on Line 11, Column 6)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:11:24:E: character data is not allowed here
+
+(Above message occurred on Line 11, Column 25)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:11:48:E: document type does not allow element "STMTTRNRS" here; missing one of "BANKMSGSRSV1", "BANKMSGSRSV2" start-tag
+
+(Above message occurred on Line 11, Column 49)
+LibOFX INFO: Created OfxDummyContainer to hold unsupported aggregate STMTTRNRS
+(Above message occurred on Line 11, Column 39)
+   PBANKMSGSRSV1>rtElement: incoming_data should be empty! You are probably using OpenSP <= 1.3.4.  The following data was lost: /FI>
+(Above message occurred on Line 12, Column 7)
+ofx_proc_status():
+    Ofx entity this status is relevant to: STMTTRNRS 
+    Severity: INFO
+    Code: 0, name: Success
+    Description: The server successfully processed the request.
+
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:17:9:E: character ";" not allowed in attribute specification list
+
+(Above message occurred on Line 17, Column 10)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:18:7:E: element "CURDEG" undefined
+
+(Above message occurred on Line 18, Column 8)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:18:19:E: end tag for element "CURDEF" which is not open
+
+(Above message occurred on Line 18, Column 20)
+LibOFX ERROR: startElement: incoming_data should be empty! You are probably using OpenSP <= 1.3.4.  The following data was lost: USD 
+(Above message occurred on Line 19, Column 3)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:20:4:E: element "A" undefined
+
+(Above message occurred on Line 20, Column 5)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:20:9:E: character data is not allowed here
+
+(Above message occurred on Line 20, Column 10)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:20:24:E: end tag for element "ACCTID" which is not open
+
+(Above message occurred on Line 20, Column 25)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:21:11:E: document type does not allow element "ACCTTYPE" here
+
+(Above message occurred on Line 21, Column 12)
+  bOFX ERROR: startElement: incoming_data should be empty! You are probably using OpenSP <= 1.3.4.  The following data was lost: >999988
+(Above message occurred on Line 21, Column 3)
+LibOFX ERROR: WRITEME: ACCTTYPE (CHECKING) is not supported by the  container
+(Above message occurred on Line 21, Column 21)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:22:18:E: "OFX" not finished but containing element ended
+
+(Above message occurred on Line 22, Column 19)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:22:18:E: end tag for "OFX" omitted, but its declaration does not permit this
+/tmp/libofxtmpQLPkEH:20:4: start tag was here
+
+(Above message occurred on Line 22, Column 19)
+LibOFX ERROR: Tried to close a A without a open element (NULL pointer)
+(Above message occurred on Line 22, Column 5)
+LibOFX ERROR: OpenSP parser: otherError (misc parse error):
+/tmp/libofxtmpQLPkEH:22:18:E: end tag for "BANKACCTFROM" which is not finished
+
+(Above message occurred on Line 22, Column 19)
+LibOFX ERROR: Tried to close a BANKACCTFROM without a open element (NULL pointer)
+(Above message occurred on Line 22, Column 5)
+ASAN:DEADLYSIGNAL
+=================================================================
+==130318==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000010 (pc 0x7f61aaac8d70 bp 0x7ffd345a34b0 sp 0x7ffd345a2630 T0)
+==130318==The signal is caused by a READ memory access.
+==130318==Hint: address points to the zero page.
+    #0 0x7f61aaac8d6f in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::compare(char const*) const (/usr/lib/x86_64-linux-gnu/libstdc++.so.6+0x126d6f)
+    #1 0x7f61aadc78fa in bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/7.3.0/../../../../include/c++/7.3.0/bits/basic_string.h:6036:20
+    #2 0x7f61aadc78fa in bool std::operator!=<char, std::char_traits<char>, std::allocator<char> >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) /usr/bin/../lib/gcc/x86_64-linux-gnu/7.3.0/../../../../include/c++/7.3.0/bits/basic_string.h:6074
+    #3 0x7f61aadc78fa in OFXApplication::startElement(SGMLApplication::StartElementEvent const&) /home/fish/Desktop/dumb/tools/libofx-0.9.14/fast/lib/../../lib/ofx_sgml.cpp:129
+    #4 0x7f61a96e6167 in OpenSP::GenericEventHandler::startElement(OpenSP::StartElementEvent*) (/usr/lib/libosp.so.5+0xec167)
+    #5 0x7f61a973db28 in OpenSP::Parser::pushElementCheck(OpenSP::ElementType const*, OpenSP::StartElementEvent*, bool) (/usr/lib/libosp.so.5+0x143b28)
+    #6 0x7f61a973e80c in OpenSP::Parser::acceptStartTag(OpenSP::ElementType const*, OpenSP::StartElementEvent*, bool) (/usr/lib/libosp.so.5+0x14480c)
+    #7 0x7f61a973ea0f in OpenSP::Parser::parseStartTag() (/usr/lib/libosp.so.5+0x144a0f)
+    #8 0x7f61a973f977 in OpenSP::Parser::doContent() (/usr/lib/libosp.so.5+0x145977)
+    #9 0x7f61a96f754f in OpenSP::Parser::parseAll(OpenSP::EventHandler&, int const volatile*) (/usr/lib/libosp.so.5+0xfd54f)
+    #10 0x7f61a96fa26e in OpenSP::ParserApp::parseAll(OpenSP::SgmlParser&, OpenSP::EventHandler&, int const volatile*) (/usr/lib/libosp.so.5+0x10026e)
+    #11 0x7f61a96faac3 in OpenSP::ParserEventGenerator::run(SGMLApplication&) (/usr/lib/libosp.so.5+0x100ac3)
+    #12 0x7f61aadc264c in ofx_proc_sgml(LibofxContext*, int, char* const*) /home/fish/Desktop/dumb/tools/libofx-0.9.14/fast/lib/../../lib/ofx_sgml.cpp:385:27
+    #13 0x7f61aad63385 in ofx_proc_file(void*, char const*) /home/fish/Desktop/dumb/tools/libofx-0.9.14/fast/lib/../../lib/ofx_preproc.cpp:383:9
+    #14 0x7f61aad56d60 in libofx_proc_file /home/fish/Desktop/dumb/tools/libofx-0.9.14/fast/lib/../../lib/file_preproc.cpp:91:5
+    #15 0x513858 in main /home/fish/Desktop/dumb/tools/libofx-0.9.14/fast/ofxdump/../../ofxdump/ofxdump.cpp:491:5
+    #16 0x7f61a99f1b96 in __libc_start_main /build/glibc-OTsEL5/glibc-2.27/csu/../csu/libc-start.c:310
+    #17 0x41ccd9 in _start (/home/fish/Desktop/dumb/tools/libofx-0.9.14/fast/fast/bin/ofxdump+0x41ccd9)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (/usr/lib/x86_64-linux-gnu/libstdc++.so.6+0x126d6f) in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::compare(char const*) const
+==130318==ABORTING
+
+```
+
+
+
