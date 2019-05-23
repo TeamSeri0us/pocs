@@ -1,5 +1,9 @@
 # motorola  路由器格式化字符串漏洞
 
+## link
+
+    http://soplar.cn/product_support.html
+
 ## description
 
     void syslog(int __pri, char * __fmt, ...) cwe-134
