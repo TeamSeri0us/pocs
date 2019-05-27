@@ -7,7 +7,7 @@ None
 # others
 ## @_@
 this bug is reported by pwd@360TeamSeri0us, 
-please send email to  teamSeri0us360@gmail.com if you have some question.
+please send email to  teamseri0us360@gmail.com if you have some question.
 
 # Detial
 
