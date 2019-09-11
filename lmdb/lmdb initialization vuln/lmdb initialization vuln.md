@@ -163,4 +163,7 @@ pwndbg> bt
 #12 0x00007ffff7a05b97 in __libc_start_main (main=0x555555620b10 <main>, argc=2, argv=0x7fffffffdd08, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffdcf8) at ../csu/libc-start.c:310
 #13 0x0000555555620a2a in _start () 
 ```
-
+## others
+```
+please send email to teamseri0us360@gmail.com if you have any questions.
+```
