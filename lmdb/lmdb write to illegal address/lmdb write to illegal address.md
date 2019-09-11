@@ -154,4 +154,7 @@ In file: /home/yt360/yt/crashes/py-lmdb/lib/mdb.c
    f 9     7ffff75e4b97 __libc_start_main+231
 Program received signal SIGSEGV (fault address 0x7efff5997014)
 ```
-
+## others
+```
+please send email to teamseri0us360@gmail.com if you have any questions.
+```
