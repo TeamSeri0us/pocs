@@ -12,6 +12,24 @@ version <=0.97
 
 https://github.com/jnwatson/py-lmdb
 
+## Reproduce
+
+replace data.mdb with poc,
+run the python script,
+
+```python
+import lmdb
+env = lmdb.open("./train", map_size=1099511627776)
+txn = env.begin(write=True)
+txn.put(key = '1', value = 'aaa')
+txn.put(key = '2', value = 'bbb')
+txn.put(key = '3', value = 'ccc')
+txn.delete(key = '1')
+txn.put(key = '3', value = 'ddd')
+txn.commit()
+env.close()
+```
+
 ## Vuln Detail
 
 In function `mdb_cursor_put`,the value of `md_flags` determines the value of `mp_flags`.
