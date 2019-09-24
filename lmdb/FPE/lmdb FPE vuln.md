@@ -12,6 +12,24 @@ version <=0.97
 
 https://github.com/jnwatson/py-lmdb
 
+## Reproduce
+
+replace data.mdb with poc,
+run the python script,
+
+```python
+import lmdb
+env = lmdb.open("./train", map_size=1099511627776)
+txn = env.begin(write=True)
+txn.put(key = '1', value = 'aaa')
+txn.put(key = '2', value = 'bbb')
+txn.put(key = '3', value = 'ccc')
+txn.delete(key = '1')
+txn.put(key = '3', value = 'ddd')
+txn.commit()
+env.close()
+```
+
 ## Vuln Detail
 
 `mdb_env_read_header` function reads attributions of mdb file into  variable `meta`.When the `md_pad` field of `data.mdb` is set to 0,a divide-by-zero error exists in the `mdb_env_open2`.
