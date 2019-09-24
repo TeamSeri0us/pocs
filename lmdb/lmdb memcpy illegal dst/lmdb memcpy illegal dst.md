@@ -12,6 +12,25 @@ version <=0.97
 
 https://github.com/jnwatson/py-lmdb
 
+## Reproduce
+
+replace data.mdb with poc,
+run the python script,
+
+```python
+import lmdb
+env = lmdb.open("./train", map_size=1099511627776)
+txn = env.begin(write=True)
+txn.put(key = '1', value = 'aaa')
+txn.put(key = '2', value = 'bbb')
+txn.put(key = '3', value = 'ccc')
+txn.delete(key = '1')
+txn.put(key = '3', value = 'ddd')
+txn.commit()
+env.close()
+```
+
+
 ## Vuln Detail
 
 In normal condition,the value of `mn_flags` is 0.With a wrong value of `mn_flags`,`mdb_xcursor_init1` function will be called.
